@@ -100,6 +100,13 @@ On every push to `main`:
 - Verified metrics using PromQL (`up`)  
 - Grafana integrated with Prometheus as data source  
 - Imported dashboards for cluster observability  
+## 📸 Monitoring Screenshots
+
+### Prometheus Metrics (PromQL)
+![Prometheus](./docs/images/prometheus.png)
+
+### Grafana Dashboard (Node Metrics)
+![Grafana](./docs/images/grafana.png)
 
 ### Key Metrics Observed
 
