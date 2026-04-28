@@ -16,9 +16,7 @@ This project demonstrates a production-style DevOps pipeline that builds, ships,
 
 ## 🏗️ Architecture
 
-
 Developer → GitHub → GitHub Actions → Docker Hub → Kubernetes (Helm) → Application
-
 
 ---
 
@@ -35,7 +33,6 @@ Developer → GitHub → GitHub Actions → Docker Hub → Kubernetes (Helm) →
 
 ## 📁 Project Structure
 
-
 cloud-devops-kubernetes-platform/
 ├── app/
 ├── helm/
@@ -44,7 +41,6 @@ cloud-devops-kubernetes-platform/
 ├── docs/
 ├── .github/workflows/
 └── README.md
-
 
 ---
 
