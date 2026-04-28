@@ -30,7 +30,7 @@ Developer → GitHub → GitHub Actions → Docker Hub → Kubernetes using Helm
 
 ## Project Structure
 
-```text
+<pre>
 cloud-devops-kubernetes-platform/
 ├── app/
 ├── helm/
@@ -39,7 +39,7 @@ cloud-devops-kubernetes-platform/
 ├── docs/
 ├── .github/workflows/
 └── README.md
-
+</pre>
 
 ## How to Run
 
