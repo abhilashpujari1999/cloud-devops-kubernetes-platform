@@ -101,7 +101,7 @@ On every push to `main`:
 - Grafana integrated with Prometheus as data source  
 - Imported dashboards for cluster observability  
 ## 📸 Monitoring Screenshots
-
+The following screenshots demonstrate real-time Kubernetes monitoring:
 ### Prometheus Metrics (PromQL)
 ![Prometheus](./docs/images/prometheus.png)
 
