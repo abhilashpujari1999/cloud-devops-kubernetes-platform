@@ -27,8 +27,10 @@ Developer → GitHub → GitHub Actions → Docker Hub → Kubernetes using Helm
 - Python Flask
 - GitHub Codespaces
 
+
 ## Project Structure
 
+```text
 cloud-devops-kubernetes-platform/
 ├── app/
 ├── helm/
@@ -37,6 +39,7 @@ cloud-devops-kubernetes-platform/
 ├── docs/
 ├── .github/workflows/
 └── README.md
+
 
 ## How to Run
 
