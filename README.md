@@ -33,14 +33,14 @@ Developer → GitHub → GitHub Actions → Docker Hub → Kubernetes (Helm) →
 
 ## 📁 Project Structure
 
-cloud-devops-kubernetes-platform/
-├── app/
-├── helm/
-├── terraform/
-├── monitoring/
-├── docs/
-├── .github/workflows/
-└── README.md
+    cloud-devops-kubernetes-platform/
+    ├── app/
+    ├── helm/
+    ├── terraform/
+    ├── monitoring/
+    ├── docs/
+    ├── .github/workflows/
+    └── README.md
 
 ---
 
