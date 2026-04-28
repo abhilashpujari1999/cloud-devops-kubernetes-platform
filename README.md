@@ -46,27 +46,27 @@ Developer → GitHub → GitHub Actions → Docker Hub → Kubernetes (Helm) →
 
 ## 🚀 How to Run
 
-### 1. Build Docker Image
+### Build Docker Image
 
-cd app  
-docker build -t devops-app .
+    cd app
+    docker build -t devops-app .
 
-### 2. Run Application
+### Run Application
 
-docker run -p 5000:5000 devops-app
+    docker run -p 5000:5000 devops-app
 
-### 3. Deploy to Kubernetes
+### Deploy to Kubernetes
 
-helm upgrade --install devops-demo-app ./helm/devops-demo-app  
-kubectl get pods
+    helm upgrade --install devops-demo-app ./helm/devops-demo-app
+    kubectl get pods
 
-### 4. Access Application (Codespaces)
+### Access Application (Codespaces)
 
-kubectl port-forward svc/devops-demo-app-service 8080:80  
+    kubectl port-forward svc/devops-demo-app-service 8080:80
 
 Then open Codespaces → Ports tab → Port 8080
 
-Note: localhost does not work in Codespaces. Use forwarded port.
+Note: localhost does not work in Codespaces. Use forwarded port URL.
 
 ---
 
@@ -74,34 +74,34 @@ Note: localhost does not work in Codespaces. Use forwarded port.
 
 On push to main:
 
-- Build Docker image  
-- Run health check  
-- Push to Docker Hub  
+- Build Docker image
+- Run health check
+- Push image to Docker Hub
 
 ---
 
 ## 📈 Autoscaling
 
-kubectl autoscale deployment devops-demo-app --cpu=50% --min=2 --max=5
+    kubectl autoscale deployment devops-demo-app --cpu=50% --min=2 --max=5
 
 ---
 
 ## 💡 Key Features
 
-- End-to-end DevOps pipeline  
-- CI/CD automation  
-- Kubernetes deployment using Helm  
-- Horizontal Pod Autoscaler  
-- Cloud-based workflow  
+- End-to-end DevOps pipeline
+- CI/CD automation
+- Kubernetes deployment using Helm
+- Horizontal Pod Autoscaler
+- Cloud-based workflow
 
 ---
 
 ## 🔥 Future Enhancements
 
-- Prometheus & Grafana monitoring  
-- Ingress controller  
-- Terraform AKS/EKS  
-- GitOps (ArgoCD)  
+- Prometheus & Grafana monitoring
+- Ingress controller
+- Terraform AKS/EKS deployment
+- GitOps (ArgoCD)
 
 ---
 
