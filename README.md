@@ -4,44 +4,53 @@
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-Orchestration-blue)
 ![Helm](https://img.shields.io/badge/Helm-Package%20Manager-blue)
 ![GitHub Actions](https://img.shields.io/badge/CI/CD-GitHub%20Actions-black)
-![Python](https://img.shields.io/badge/Python-Flask-green)
+![Prometheus](https://img.shields.io/badge/Monitoring-Prometheus-orange)
+![Grafana](https://img.shields.io/badge/Visualization-Grafana-yellow)
+![Terraform](https://img.shields.io/badge/IaC-Terraform-purple)
 
 ---
 
 ## 📌 Overview
 
-This project demonstrates a production-style DevOps pipeline that builds, ships, and deploys a containerized application to Kubernetes.
+This project demonstrates a **production-style DevOps pipeline** that builds, deploys, and monitors a containerized application using modern DevOps tools.
+
+It covers the full lifecycle:
+- Code → CI/CD → Container → Kubernetes → Monitoring → Infrastructure as Code
 
 ---
 
 ## 🏗️ Architecture
 
-Developer → GitHub → GitHub Actions → Docker Hub → Kubernetes (Helm) → Application
+Developer → GitHub → GitHub Actions → Docker Hub → Kubernetes (Helm) → Prometheus → Grafana
 
 ---
 
 ## ⚙️ Tech Stack
 
-- Docker
-- Kubernetes (Kind)
-- Helm
-- GitHub Actions
-- Python (Flask)
-- GitHub Codespaces
+- Docker  
+- Kubernetes (Kind)  
+- Helm  
+- GitHub Actions  
+- Prometheus  
+- Grafana  
+- Terraform (EKS & AKS structure)  
+- Python (Flask)  
+- GitHub Codespaces  
 
 ---
 
 ## 📁 Project Structure
 
-cloud-devops-kubernetes-platform/
-
-- app/
-- helm/
-- terraform/
-- monitoring/
-- docs/
-- .github/workflows/
-- README.md
+    cloud-devops-kubernetes-platform/
+    ├── app/                      # Flask application
+    ├── helm/                     # Kubernetes Helm charts
+    ├── terraform/
+    │   ├── aws-eks/              # AWS EKS configuration
+    │   └── azure-aks/            # Azure AKS configuration
+    ├── monitoring/               # Prometheus & Grafana configs
+    ├── docs/                     # Architecture & guides
+    ├── .github/workflows/        # CI/CD pipeline
+    └── README.md
 
 ---
 
@@ -49,63 +58,88 @@ cloud-devops-kubernetes-platform/
 
 ### Build Docker Image
 
-cd app  
-docker build -t devops-app .
+    cd app
+    docker build -t devops-app .
 
 ### Run Application
 
-docker run -p 5000:5000 devops-app
+    docker run -p 5000:5000 devops-app
 
 ### Deploy to Kubernetes
 
-helm upgrade --install devops-demo-app ./helm/devops-demo-app  
-kubectl get pods
+    helm upgrade --install devops-demo-app ./helm/devops-demo-app
+    kubectl get pods
 
 ### Access Application (Codespaces)
 
-kubectl port-forward svc/devops-demo-app-service 8080:80  
+    kubectl port-forward svc/devops-demo-app-service 8080:80
 
-Then open Codespaces → Ports tab → Port 8080  
-
-Note: localhost does not work in Codespaces. Use forwarded port URL.
+Then open **Codespaces → Ports tab → Port 8080**
 
 ---
 
 ## 🔄 CI/CD Pipeline
 
-On push to main:
+On every push to `main`:
 
 - Build Docker image  
-- Run health check  
+- Run container health check  
 - Push image to Docker Hub  
 
 ---
 
 ## 📈 Autoscaling
 
-kubectl autoscale deployment devops-demo-app --cpu=50% --min=2 --max=5
+    kubectl autoscale deployment devops-demo-app --cpu=50% --min=2 --max=5
+
+---
+
+## 📊 Monitoring (Prometheus + Grafana)
+
+- Prometheus installed via Helm for metrics collection  
+- Verified metrics using PromQL (`up`)  
+- Grafana integrated with Prometheus as data source  
+- Imported dashboards for cluster observability  
+
+### Key Metrics Observed
+
+- CPU usage  
+- Memory usage  
+- Node health  
+- Pod metrics  
+
+---
+
+## ☁️ Infrastructure as Code (Terraform)
+
+Terraform configurations included for:
+
+- AWS EKS cluster setup  
+- Azure AKS cluster setup  
+
+These demonstrate real-world IaC structure for Kubernetes provisioning.
 
 ---
 
 ## 💡 Key Features
 
 - End-to-end DevOps pipeline  
-- CI/CD automation  
+- Automated CI/CD workflow  
 - Kubernetes deployment using Helm  
 - Horizontal Pod Autoscaler  
-- Cloud-based workflow  
+- Monitoring with Prometheus & Grafana  
+- Terraform-based infrastructure setup  
 
 ---
 
 ## 🔥 Future Enhancements
 
-- Prometheus & Grafana monitoring  
 - Ingress controller  
-- Terraform AKS/EKS deployment  
-- GitOps (ArgoCD)  
+- ArgoCD (GitOps)  
+- Full cloud deployment (EKS/AKS)  
 
 ---
 
 ## 👨‍💻 Author
 
-Abhilash Pujari
+**Abhilash Pujari**
