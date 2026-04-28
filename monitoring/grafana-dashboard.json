@@ -1,0 +1,11 @@
+{
+  "title": "DevOps Demo App Dashboard",
+  "panels": [
+    {
+      "title": "Application Health",
+      "type": "stat",
+      "datasource": "Prometheus",
+      "targets": []
+    }
+  ]
+}
