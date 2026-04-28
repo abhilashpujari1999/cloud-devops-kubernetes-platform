@@ -1,40 +1,33 @@
-# 🚀 End-to-End DevOps Platform (Docker + Kubernetes + CI/CD)
+# End-to-End DevOps Platform
 
-This project demonstrates a **production-style DevOps workflow** using Docker, Kubernetes, Helm, and GitHub Actions.
+This project demonstrates a production-style DevOps workflow using Docker, Kubernetes, Helm, and GitHub Actions.
 
----
+## Project Overview
 
-## 📌 Project Overview
-
-This project showcases:
+This project includes:
 
 - Containerized Python Flask application
 - CI/CD pipeline using GitHub Actions
 - Docker image build and push to Docker Hub
 - Kubernetes deployment using Helm
-- Autoscaling using Horizontal Pod Autoscaler (HPA)
+- Autoscaling using Horizontal Pod Autoscaler
 - Cloud-based development using GitHub Codespaces
 
----
+## Architecture
 
-## 🏗️ Architecture
+Developer → GitHub → GitHub Actions → Docker Hub → Kubernetes using Helm → Application
 
-Developer → GitHub → GitHub Actions → Docker Hub → Kubernetes (Helm) → Application
-
----
-
-## ⚙️ Tech Stack
+## Tech Stack
 
 - Docker
-- Kubernetes (Kind)
+- Kubernetes
+- Kind
 - Helm
 - GitHub Actions
-- Python (Flask)
+- Python Flask
 - GitHub Codespaces
 
----
-
-## 📁 Project Structure
+## Project Structure
 
 cloud-devops-kubernetes-platform/
 ├── app/
@@ -45,80 +38,57 @@ cloud-devops-kubernetes-platform/
 ├── .github/workflows/
 └── README.md
 
----
-
-## 🚀 How to Run
+## How to Run
 
 ### 1. Build Docker Image
 
 cd app  
 docker build -t devops-app .
 
----
-
 ### 2. Run Application
 
 docker run -p 5000:5000 devops-app
-
----
 
 ### 3. Deploy to Kubernetes
 
 helm upgrade --install devops-demo-app ./helm/devops-demo-app  
 kubectl get pods
 
----
+### 4. Access Application in Codespaces
 
-### 4. Access Application
+kubectl port-forward svc/devops-demo-app-service 8080:80
 
-kubectl port-forward svc/devops-demo-app-service 8080:80  
+Then go to Codespaces Ports tab and open port 8080.
 
-Open:  
-http://localhost:8080
+Note: localhost links may not work directly in Codespaces. Use the forwarded port URL.
 
----
+## CI/CD Pipeline
 
-## 🔄 CI/CD Pipeline
+On every push to main:
 
-On every push to `main`:
+- Builds Docker image
+- Runs container health check
+- Pushes image to Docker Hub
 
-- Build Docker image  
-- Run container health check  
-- Push image to Docker Hub  
-
----
-
-## 📈 Autoscaling
+## Autoscaling
 
 kubectl autoscale deployment devops-demo-app --cpu=50% --min=2 --max=5
 
----
-
-## 💡 Key Features
+## Key Features
 
 - End-to-end DevOps pipeline
-- Automated CI/CD workflows
-- Kubernetes deployment with Helm
-- Production-style scaling setup
-- Cloud-based development
+- Automated CI/CD workflow
+- Kubernetes deployment using Helm
+- Horizontal Pod Autoscaler configuration
+- Cloud-based development workflow
 
----
+## Future Enhancements
 
-## 📌 Resume Description
-
-Built an end-to-end DevOps platform using Docker, Kubernetes, Helm, and GitHub Actions. Automated CI/CD pipelines, deployed containerized applications to Kubernetes, and implemented autoscaling with HPA for production-style reliability.
-
----
-
-## 🔥 Future Enhancements
-
-- Prometheus & Grafana monitoring
+- Prometheus and Grafana monitoring
 - Ingress controller
 - Terraform AKS/EKS deployment
-- GitOps (ArgoCD)
+- GitOps using ArgoCD
 
----
-
-## 👨‍💻 Author
+## Author
 
 Abhilash Pujari
