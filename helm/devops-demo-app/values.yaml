@@ -1,0 +1,9 @@
+image:
+  repository: abhilashavidan/devops-demo-app
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 5000
