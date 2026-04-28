@@ -33,14 +33,15 @@ Developer → GitHub → GitHub Actions → Docker Hub → Kubernetes (Helm) →
 
 ## 📁 Project Structure
 
-    cloud-devops-kubernetes-platform/
-    ├── app/
-    ├── helm/
-    ├── terraform/
-    ├── monitoring/
-    ├── docs/
-    ├── .github/workflows/
-    └── README.md
+cloud-devops-kubernetes-platform/
+
+- app/
+- helm/
+- terraform/
+- monitoring/
+- docs/
+- .github/workflows/
+- README.md
 
 ---
 
@@ -48,23 +49,23 @@ Developer → GitHub → GitHub Actions → Docker Hub → Kubernetes (Helm) →
 
 ### Build Docker Image
 
-    cd app
-    docker build -t devops-app .
+cd app  
+docker build -t devops-app .
 
 ### Run Application
 
-    docker run -p 5000:5000 devops-app
+docker run -p 5000:5000 devops-app
 
 ### Deploy to Kubernetes
 
-    helm upgrade --install devops-demo-app ./helm/devops-demo-app
-    kubectl get pods
+helm upgrade --install devops-demo-app ./helm/devops-demo-app  
+kubectl get pods
 
 ### Access Application (Codespaces)
 
-    kubectl port-forward svc/devops-demo-app-service 8080:80
+kubectl port-forward svc/devops-demo-app-service 8080:80  
 
-Then open Codespaces → Ports tab → Port 8080
+Then open Codespaces → Ports tab → Port 8080  
 
 Note: localhost does not work in Codespaces. Use forwarded port URL.
 
@@ -74,34 +75,34 @@ Note: localhost does not work in Codespaces. Use forwarded port URL.
 
 On push to main:
 
-- Build Docker image
-- Run health check
-- Push image to Docker Hub
+- Build Docker image  
+- Run health check  
+- Push image to Docker Hub  
 
 ---
 
 ## 📈 Autoscaling
 
-    kubectl autoscale deployment devops-demo-app --cpu=50% --min=2 --max=5
+kubectl autoscale deployment devops-demo-app --cpu=50% --min=2 --max=5
 
 ---
 
 ## 💡 Key Features
 
-- End-to-end DevOps pipeline
-- CI/CD automation
-- Kubernetes deployment using Helm
-- Horizontal Pod Autoscaler
-- Cloud-based workflow
+- End-to-end DevOps pipeline  
+- CI/CD automation  
+- Kubernetes deployment using Helm  
+- Horizontal Pod Autoscaler  
+- Cloud-based workflow  
 
 ---
 
 ## 🔥 Future Enhancements
 
-- Prometheus & Grafana monitoring
-- Ingress controller
-- Terraform AKS/EKS deployment
-- GitOps (ArgoCD)
+- Prometheus & Grafana monitoring  
+- Ingress controller  
+- Terraform AKS/EKS deployment  
+- GitOps (ArgoCD)  
 
 ---
 
